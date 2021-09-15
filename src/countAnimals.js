@@ -23,12 +23,10 @@ function countAnimals(animal) {
       const result = element.residents.filter((animalzinho) => animalzinho.sex === animal.gender);
       final.push(result.length);
     } else if (element.name === animal.specie) {
-      final.push(element.popularity);
-      console.log(element);
+      final.push(element.residents.length);
     }
   });
   return final[0];
 }
 
 module.exports = countAnimals;
-console.log(countAnimals({ specie: 'elephants' }));
