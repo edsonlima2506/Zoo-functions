@@ -13,20 +13,20 @@ const saida = {
 };
 
 function countAnimals(animal) {
-  const final = [];
+  const resultado = [];
   if (animal === undefined) {
-    final.push(saida);
-    return final[0];
+    resultado.push(saida);
+    return resultado[0];
   }
   data.species.forEach((element) => {
     if (element.name === animal.specie && animal.gender !== undefined) {
       const result = element.residents.filter((animalzinho) => animalzinho.sex === animal.gender);
-      final.push(result.length);
+      resultado.push(result.length);
     } else if (element.name === animal.specie) {
-      final.push(element.residents.length);
+      resultado.push(element.residents.length);
     }
   });
-  return final[0];
+  return resultado[0];
 }
 
 module.exports = countAnimals;
