@@ -13,4 +13,3 @@ function getAnimalsOlderThan(animal, age) {
   return animals.every((element) => element >= age);
 }
 module.exports = getAnimalsOlderThan;
-getAnimalsOlderThan('otters', 7);
