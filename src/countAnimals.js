@@ -19,8 +19,8 @@ function countAnimals(animal) {
     return resultado[0];
   }
   data.species.forEach((element) => {
-    if (element.name === animal.specie && animal.gender !== undefined) {
-      const result = element.residents.filter((animalzinho) => animalzinho.sex === animal.gender);
+    if (element.name === animal.specie && animal.sex !== undefined) {
+      const result = element.residents.filter((animalzinho) => animalzinho.sex === animal.sex);
       resultado.push(result.length);
     } else if (element.name === animal.specie) {
       resultado.push(element.residents.length);
@@ -30,3 +30,4 @@ function countAnimals(animal) {
 }
 
 module.exports = countAnimals;
+console.log(countAnimals({ specie: 'elephants', sex: 'male' }));
