@@ -1,7 +1,5 @@
 const data = require('../data/zoo_data');
 
-const result = [];
-
 function callback(a, b) {
   if (a.age > b.age) {
     return -1;
@@ -14,18 +12,21 @@ function callback(a, b) {
 }
 
 function getOldestFromFirstSpecies(id) {
+  const array = [];
   data.employees.forEach((element) => {
     if (element.id === id) {
       data.species.forEach((animal) => {
         if (animal.id === element.responsibleFor[0]) {
-          result.push(animal.residents.sort(callback)[0].name);
-          result.push(animal.residents.sort(callback)[0].sex);
-          result.push(animal.residents.sort(callback)[0].age);
+          array.push(animal.residents.sort(callback)[0].name);
+          array.push(animal.residents.sort(callback)[0].sex);
+          array.push(animal.residents.sort(callback)[0].age);
         }
       });
     }
   });
-  return result;
+  return array;
 }
 
 module.exports = getOldestFromFirstSpecies;
+getOldestFromFirstSpecies('c5b83cb3-a451-49e2-ac45-ff3f54fbe7e1');
+console.log(getOldestFromFirstSpecies('c5b83cb3-a451-49e2-ac45-ff3f54fbe7e1'));
