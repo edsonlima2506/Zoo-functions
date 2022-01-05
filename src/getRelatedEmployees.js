@@ -13,7 +13,7 @@ function isManager(id) {
 
 function getRelatedEmployees(managerId) {
   const result = [];
-  if (managerId === burlId || managerId === olaId || managerId === stephanieId) {
+  if (isManager(managerId)) {
     data.employees.forEach((element) => {
       if (element.managers.includes(managerId)) {
         result.push(`${element.firstName} ${element.lastName}`);

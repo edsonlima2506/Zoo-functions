@@ -27,11 +27,8 @@ function calculateEntry(entrants) {
     return 0;
   }
   const saidaFuncao = countEntrants(entrants);
-  let resultado = 0;
-  resultado = saidaFuncao.child * 20.99 + saidaFuncao.adult * 49.99 + saidaFuncao.senior * 24.99;
-  return resultado;
+  return (
+    saidaFuncao.child * 20.99 + saidaFuncao.adult * 49.99 + saidaFuncao.senior * 24.99);
 }
 
 module.exports = { countEntrants, calculateEntry };
-// console.log(countEntrants({}));
-// console.log(calculateEntry(entrada));

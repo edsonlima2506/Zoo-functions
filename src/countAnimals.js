@@ -15,8 +15,7 @@ const saida = {
 function countAnimals(animal) {
   const resultado = [];
   if (animal === undefined) {
-    resultado.push(saida);
-    return resultado[0];
+    return saida;
   }
   data.species.forEach((element) => {
     if (element.name === animal.specie && animal.sex !== undefined) {
@@ -30,4 +29,3 @@ function countAnimals(animal) {
 }
 
 module.exports = countAnimals;
-console.log(countAnimals({ specie: 'elephants', sex: 'male' }));
